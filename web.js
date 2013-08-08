@@ -2,6 +2,7 @@ var express = require('express');
 var fs = require('fs');
 
 var app = express.createServer(express.logger());
+app.use('/static', express.static('static'));
 
 app.get('/', function(request, response) {
     index = fs.readFileSync('index.html');
